@@ -1,0 +1,8 @@
+<view>
+<input bindinput="bindKeyinput" value="{{conpany}}" type="text" placeholder="请输入公司名称并保存" placeholder-class="input-placeholder" wx:if="{{type === 1}}" />
+<input bindinput="bindKeyinput" value="{{companyAddress}}" type="text" placeholder="请输入公司地址并保存" placeholder-class="input-placeholder" wx:elif="{{type === 2}}" />
+<input bindinput="bindKeyinput" value="{{profession}}" type="text" placeholder="请输入职业并保存" placeholder-class="input-placeholder" wx:else />
+<view>
+    <button bind:tap="save" type="primary">保存</button>
+</view>
+</view>

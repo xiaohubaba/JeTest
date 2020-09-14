@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "mp-halfScreenDialog": "../../miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",
+      "mp-navigation-bar": "../../miniprogram_npm/weui-miniprogram/navigation-bar/navigation-bar"
+    },
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "UI组件库"
+  }

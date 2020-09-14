@@ -1,0 +1,58 @@
+.image {
+    display: flex;
+    justify-content: center;
+}
+.image image {
+    width: 140rpx;
+    height: 120rpx;
+    padding: 50rpx 0 50rpx 0;
+    display: flex;
+    justify-content: center;
+}
+.input {
+    margin-top: 25rpx;
+}
+.input view input {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 20rpx 0;
+}
+.first {
+    display: flex;
+    padding: 0 30rpx;
+    position: relative;
+}
+.first view {
+    width: 100%;
+}
+.first button {
+    position: absolute;
+    right: 30rpx;
+    bottom: 20rpx;
+    z-index: 99999;
+}
+.first .button {
+    background: gray;
+    color: #fff;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 40rpx 30rpx;
+}
+.btn button {
+    width: 100%;
+}
+  .kong {
+      clear: both;
+      content: ''
+  }
+  .save {
+      display: flex;
+      padding: 20rpx 30rpx;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .use-other {
+    font-size: 12px;
+}

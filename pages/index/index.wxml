@@ -1,0 +1,147 @@
+<!--index.wxml-->
+<wxs src="../../utils/subutils.wxs" module="tools"></wxs>
+<mp-navigation-bar title="首页" background="#fff" color="#000" back="{{false}}">
+  <view slot="left" class="location-header">
+       <image src="../../images/dingwei.png" />
+       <text>{{isgetLocation ? city : '定位中...'}}</text>
+       </view>
+</mp-navigation-bar>
+<view class="container">
+    <block>
+      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+      <block wx:if="{{!hasUserInfo && canIUse && !sureInfo && !phone}}">
+        <view class="login-way">
+          <image src="../../images/logo.jpg" class="head-img" />
+          <button class="btn" bindgetuserinfo="weixinLogin" open-type="getUserInfo" wx:if="{{!authorize}}">
+            <image class="weixin" src="../../images/weixin.png" />
+            <text>微信登录</text>
+            </button>
+              <button class="btn" bindgetphonenumber="weixinPhoneLogin" open-type="getPhoneNumber" wx:else>
+            <image class="weixin" src="../../images/weixin.png" />
+            <text>微信登录</text>
+            </button>
+        <view bind:tap="phoneLogin">手机号登录</view>
+        </view>
+          <view class="notice">
+          未注册WeTest的手机号，登录时将自动注册，且代表您
+     已同意<text>《WeTest注册协议》</text>和<text>《WeTest隐私政策》</text>
+        </view>
+      </block>
+     <block wx:else>
+       <view class="page">
+       <view class="header-swiper">
+        <swiper indicator-dots="{{indicatorDots}}" style="height:400rpx"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{swiperList}}" wx:key="*this">
+          <swiper-item>
+            <image class="swiper-item" data-id='{{index}}' src="{{item}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+       </view>
+       <view class="list">
+       <view class="one">
+        <image src="../../images/glass.png" bind:tap="allProject" />
+        <text bind:tap="allProject">项目列表</text>
+       </view>
+       <view class="two">
+        <image src="../../images/shiguan.png" bind:tap="myProject" />
+       <text bind:tap="myProject">我的项目</text>
+       </view>
+       </view>
+       <view class="bluetooth-equip">
+         <view class="left">
+           <image src="../../images/equipment.png" />
+           <text>我的设备</text>
+         </view>
+         <view type="default" size="mini" class="bluetooth-btn" bind:tap="addEquipmet">+添加</view>
+       </view>
+     <block wx:if="{{list.length}}">
+      <scroll-view scroll-y="{{true}}" refresher-enabled="{{true}}" style="width:100%;">
+       <view class="wrapper">
+         <block wx:for="{{list.length > 5 ? list.slice(0,5) : list}}" wx:key="item" wx:for-index="index">
+            <view  class="isconnect"  data-id="{{item.deviceId}}">
+          <view class="left">
+           <image src="../../images/machine.png" class="image" />
+         <view class="bluetooth">
+         <text>{{item.name}}</text> <image src="../../images/edit.png" data-item="{{item}}"  bind:tap="edit" class="img" />
+           <text class="second">MAC  {{item.deviceId}}</text>
+         </view>
+         <button type="primary" data-id="{{item.deviceId}}" size="mini" bind:tap="createBLEConnection" class="right-btn">{{item.isconnect ? '连接' : '断开'}}</button>
+          </view>
+       </view>
+       </block>
+       </view>
+      </scroll-view>
+     </block>
+     <block wx:else>
+    <view class="no-equipment">
+    <text>您还没有可以连接的设备</text>
+    <image src="../../images/unhappy.png"></image>
+    <text>请点击添加设备</text>
+    </view>
+     </block>
+     <view class="{{showModal2 ? 'userinfo' : 'userinfo hide1'}}">
+      <text class="title">WeTest   申请使用</text>
+     <text class="info">获取你的位置信息</text>
+     <text class="location">您的位置信息将用于小程序获取您当前所在的微信信息</text>
+     <view class="bottom-btn">
+       <button size="mini" bind:tap="cancelLocation">拒绝</button>
+       <button size="mini" type="primary" bind:tap="getLocation">允许</button>
+     </view>
+     </view>
+       </view>
+     </block>
+    </block>
+    <!-- 弹出微信登录弹窗 -->
+     <block  wx:if="{{!authorize}}">
+  <view class="{{showModal ? 'userinfo' : 'userinfo hide'}}">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    获取你的昵称、头像、地区及性别
+    </button> -->
+    <text class="title">WeTest   申请</text>
+      <view  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="view">
+     <text class="info">获取你的昵称、头像、地区及性别</text>
+     <view class="divide-line"></view>
+     <view class="personal-info">
+     <view class="left">
+       <image src="{{userInfo.avatarUrl}}" class="image" />
+       <view class="right">
+         <text>{{userInfo.nickName}}</text>
+          <text>微信个人信息</text>
+       </view>
+     </view>
+     <image src="../../images/correct.png" />
+     </view>
+     <text class="use-other" bind:tap="userOther">使用其他头像和昵称</text>
+     <view class="bottom-btn">
+       <button size="mini" bind:tap="cancelLogin">取消</button>
+       <button size="mini" type="primary" bindgetuserinfo="getUserInfo">允许</button>
+     </view>
+    </view>
+    </view>
+     </block>
+     <block wx:else>
+      <view class="{{showModal1 ? 'userinfo' : 'userinfo hide1'}}">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    获取你的昵称、头像、地区及性别
+    </button> -->
+    <text class="title">WeTest   申请使用</text>
+      <view  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="view">
+     <text class="info">你的手机号码</text>
+     <view class="divide-line"></view>
+     <view class="personal-info">
+     <view class="left">
+      <text>{{phoneNumber}}    微信绑定号码</text>
+     </view>
+     <image src="../../images/correct.png" />
+     </view>
+     <text class="use-other" bind:tap="userOtherPhone">使用其他手机号码</text>
+     <view class="bottom-btn">
+       <button size="mini" bind:tap="cancelLogin">取消</button>
+       <button size="mini" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许</button>
+     </view>
+    </view>
+    </view>
+     </block>
+</view>

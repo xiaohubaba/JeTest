@@ -1,0 +1,22 @@
+<wxs src="../../../utils/subutils.wxs" module="tools"></wxs>
+<view class="bluetooth">
+<view class="block" bind:tap="startBluetoothDevicesDiscovery"></view>
+<block wx:if="{{!isfound}}">
+    <text class="tip">若未搜索到，请点击上方刷新</text>
+</block>
+<block wx:else>
+    <view class="isfound" wx:if="{{blueList.length}}">
+        <text class="text">已搜索设备，请点击配对</text>
+        <view class="list" wx:for="{{blueList}}" wx:key="item">
+        <view class="left" bind:tap="writeBLECharacteristicValue">
+            <image src="../../../images/machine.png" />
+            <view class="left-block">
+                <text>设备名称：{{item.name}}</text>
+                <text>MAC：{{tools.subStr(item.deviceId,0,8)}}</text>
+            </view>
+        </view>
+        <button type="primary"  size="mini"  hover-class="click" data-device-rs="{{item.RISS}}" data-id="{{item.deviceId}}" bind:tap="createBLEConnection">配对</button>
+        </view>
+    </view>
+</block>
+</view>
