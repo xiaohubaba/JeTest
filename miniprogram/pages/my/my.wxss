@@ -1,0 +1,104 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  border-bottom: 1px solid #000;
+}
+.log-item {
+  margin: 10rpx;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+.user-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.username {
+  margin-left: 30rpx;
+}
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.right {
+  width: 60rpx;
+  height: 60rpx;
+  flex: 0 0 60rpx;
+}
+.right image {
+  width: 100%;
+  height: 100%;
+}
+.my-project {
+  border-radius: 8px;
+  border: 1px solid #000;
+  margin: 30rpx 30rpx 50rpx;
+}
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 40rpx;
+  border-bottom: 1px solid #000;
+}
+.header1 view:first-child {
+  flex: 0 0 150rpx;
+  width: 150rpx;
+}
+.header1 view:last-child {
+  display: flex;
+  align-items: center;
+}
+.img {
+  width: 45rpx;
+  height: 45rpx;
+  margin-top: 5rpx;
+}
+.three {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0 60rpx;
+  margin: 0;
+}
+.three view {
+  flex: 1;
+  text-align: center;
+}
+.three view:last-child image {
+  width:  80rpx;
+  height: 80rpx;
+}
+.three view:first-child image {
+  width:  80rpx;
+  height: 68rpx;
+}
+.three view:nth-child(2) image {
+  width:  80rpx;
+  height: 68rpx;
+}
+.three view text {
+  display: block;
+  margin-top: 15rpx;
+}
+.help-center .title {
+  margin-left: 30rpx;
+  font-weight: 600;
+} 
+.detail-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0 30rpx 30rpx;
+  border-bottom: 1px solid #000;
+}
+.help-center view image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}

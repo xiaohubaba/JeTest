@@ -1,0 +1,139 @@
+<view class="header">
+ <view class="tab" wx:for="{{list}}" wx:key="index" class="{{selected === index ? 'selected':''}}" data-index='{{index}}' bind:tap="selected">{{item}}</view>
+</view>
+<block wx:if="{{selected === 0}}">
+<view  wx:for="{{list1}}" wx:key="index" class="block">
+ <view class="first">
+  <view class="left">
+  <text>核酸检测</text>
+  <text>{{item.time}}</text>
+  </view>
+  <image class="{{item.type === 3 ? 'right1' : 'right'}}" src="{{item.type === 1 ? '../../../images/red.png' : item.type === 2 ? '../../../images/green.png':'../../../images/black.png'}}">
+  </image>
+ </view>
+ <view class="second">
+     <view class="left">
+         <text>总耗时：{{item.long}}</text>
+         <text>样本处理温度：{{item.t1}}</text>
+         <text>核酸扩散温度：{{item.t3}}</text>
+     </view>
+     <view class="right">
+         <text>颜色：{{item.color}}</text>
+         <text>样本处理时间：{{item.t2}}</text>
+         <text>核酸扩散时间：{{item.t4}}</text>
+     </view>
+     </view>
+      <view class="third" wx:if="{{item.detail}}">
+     <text>异常情况：{{item.detail}}</text>
+     </view>
+ </view>
+     </block>
+     <block wx:elif="{{selected === 1}}" >
+     <view wx:for="{{list2}}" wx:key="index" class="block">
+         <view class="first">
+  <view class="left">
+  <text>核酸检测</text>
+  <text>{{item.time}}</text>
+  </view>
+  <image class="{{item.type === 3 ? 'right1' : 'right'}}" src="{{item.type === 1 ? '../../../images/red.png' : item.type === 2 ? '../../../images/green.png':'../../../images/black.png'}}">
+  </image>
+ </view>
+ <view class="second">
+     <view class="left">
+         <text>总耗时：{{item.long}}</text>
+         <text>样本处理温度：{{item.t1}}</text>
+         <text>核酸扩散温度：{{item.t3}}</text>
+     </view>
+     <view class="right">
+         <text>颜色：{{item.color}}</text>
+         <text>样本处理时间：{{item.t2}}</text>
+         <text>核酸扩散时间：{{item.t4}}</text>
+     </view>
+     </view>
+      <view class="third" wx:if="{{item.detail}}">
+     <text>异常情况：{{item.detail}}</text>
+     </view>
+     </view>
+     </block>
+     <block wx:elif="{{selected === 2}}">
+     <view wx:for="{{list3}}" wx:key="index" class="block">
+         <view class="first">
+  <view class="left">
+  <text>核酸检测</text>
+  <text>{{item.time}}</text>
+  </view>
+  <image class="{{item.type === 3 ? 'right1' : 'right'}}" src="{{item.type === 1 ? '../../../images/red.png' : item.type === 2 ? '../../../images/green.png':'../../../images/black.png'}}">
+  </image>
+ </view>
+ <view class="second">
+     <view class="left">
+         <text>总耗时：{{item.long}}</text>
+         <text>样本处理温度：{{item.t1}}</text>
+         <text>核酸扩散温度：{{item.t3}}</text>
+     </view>
+     <view class="right">
+         <text>颜色：{{item.color}}</text>
+         <text>样本处理时间：{{item.t2}}</text>
+         <text>核酸扩散时间：{{item.t4}}</text>
+     </view>
+     </view>
+      <view class="third" wx:if="{{item.detail}}">
+     <text>异常情况：{{item.detail}}</text>
+     </view>
+     </view>
+     </block>
+     <block  wx:elif="{{selected === 3}}">
+     <view wx:for="{{list4}}" wx:key="index" class="block">
+         <view class="first">
+  <view class="left">
+  <text>核酸检测</text>
+  <text>{{item.time}}</text>
+  </view>
+  <image class="{{item.type === 3 ? 'right1' : 'right'}}" src="{{item.type === 1 ? '../../../images/red.png' : item.type === 2 ? '../../../images/green.png':'../../../images/black.png'}}">
+  </image>
+ </view>
+ <view class="second">
+     <view class="left">
+         <text>总耗时：{{item.long}}</text>
+         <text>样本处理温度：{{item.t1}}</text>
+         <text>核酸扩散温度：{{item.t3}}</text>
+     </view>
+     <view class="right">
+         <text>颜色：{{item.color}}</text>
+         <text>样本处理时间：{{item.t2}}</text>
+         <text>核酸扩散时间：{{item.t4}}</text>
+     </view>
+     </view>
+      <view class="third" wx:if="{{item.detail}}">
+     <text>异常情况：{{item.detail}}</text>
+     </view>
+     </view>
+     </block>
+     <block  wx:else>
+     <view wx:for="{{list5}}" wx:key="index" class="block">
+         <view class="first">
+  <view class="left">
+  <text>核酸检测</text>
+  <text>{{item.time}}</text>
+  </view>
+  <image class="{{item.type === 3 ? 'right1' : 'right'}}" src="{{item.type === 1 ? '../../../images/red.png' : item.type === 2 ? '../../../images/green.png':'../../../images/black.png'}}">
+  </image>
+ </view>
+ <view class="second">
+     <view class="left">
+         <text>总耗时：{{item.long}}</text>
+         <text>样本处理温度：{{item.t1}}</text>
+         <text>核酸扩散温度：{{item.t3}}</text>
+     </view>
+     <view class="right">
+         <text>颜色：{{item.color}}</text>
+         <text>样本处理时间：{{item.t2}}</text>
+         <text>核酸扩散时间：{{item.t4}}</text>
+     </view>
+     </view>
+      <view class="third" wx:if="{{item.detail}}">
+     <text>异常情况：{{item.detail}}</text>
+     </view>
+     </view>
+     </block>
+     

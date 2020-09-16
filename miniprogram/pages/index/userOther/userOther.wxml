@@ -1,0 +1,15 @@
+<view>
+<view class="headerimg" bind:tap="chooseImage">
+<view class="left">
+<text>头像</text>
+<image src="../../../images/head.png" />
+</view>
+<image src="../../../images/right.png" />
+</view>
+<view class="headerimg">
+    <input placeholder="请输入昵称" value="" bindinput="inputValue" />
+</view>
+<view class="btn">
+    <button type="primary" size="mini" bind:tap="save" disabled="{{shuru ? false : true}}">保存</button>
+</view>
+</view>

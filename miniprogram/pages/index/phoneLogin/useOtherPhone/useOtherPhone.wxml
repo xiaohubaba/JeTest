@@ -1,0 +1,17 @@
+<view class="login">
+    <view class="input">
+      <view class="first"> 
+            <view><input placeholder="输入手机号" value="" bindinput="inputPhone" /></view>
+        <button type="primary" :disabled="iscode" size="mini" class="{{getCodeStatus ? 'button' : ''}}"  bind:tap="getCode">
+            {{getCodeStatus ? time+'s' : '获取验证码'}}
+        </button>
+      </view>
+        <view class="first"><input placeholder="输入6位验证码" value="" bindinput="inputTestCode" /></view>
+    </view>
+    </view>
+    <view class="save">
+        <text class="use-other">保存此号码供以后授权使用</text>
+        <switch checked="{{ischecked}}" />
+    </view>
+    <view class="kong"></view>
+    <view class="btn"><button type="primary" size="mini" :disabled="phoneAndCode" bind:tap="completePhone">完成</button></view>

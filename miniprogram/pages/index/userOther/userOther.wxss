@@ -1,0 +1,29 @@
+.headerimg {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding:  20rpx;
+ border-bottom: 1px solid #000;
+ font-size: 15px;
+}
+.headerimg .left {
+    display: flex;
+    align-items: center;
+}
+.headerimg .left image {
+    margin-left: 40rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+.headerimg image {
+    width: 50rpx;
+    height: 50rpx;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    margin:  40rpx 0;
+}
+.btn button {
+    padding: 0 100rpx;
+}

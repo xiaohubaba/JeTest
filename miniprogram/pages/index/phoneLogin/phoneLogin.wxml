@@ -1,0 +1,19 @@
+<view class="login">
+   <view class="image" ><image src="../../../images/red.png" /></view>
+    <view class="input">
+      <view class="first"> 
+            <view><input placeholder="输入手机号" value="" /></view>
+        <button type="primary" size="mini" class="{{getCodeStatus ? 'button' : ''}}"  bind:tap="getCode">
+            {{getCodeStatus ? time+'s' : '获取验证码'}}
+        </button>
+      </view>
+        <view class="first"><input placeholder="输入验证码" value="" /></view>
+    </view>
+    </view>
+    <text class="use-other" bind:tap="useOtherPhone">使用其他手机号登录</text>
+    <view class="kong"></view>
+    <view class="btn"><button type="primary" size="mini">立即登录</button></view>
+     <view class="notice">
+          未注册WeTest的手机号，登录时将自动注册，且代表您
+     已同意<text class="special">《WeTest注册协议》</text>和<text class="special">《WeTest隐私政策》</text>
+     </view>

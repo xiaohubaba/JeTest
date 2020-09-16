@@ -1,0 +1,32 @@
+.wrapper {
+    padding: 30rpx 40rpx;
+}
+.wrapper view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+}
+.wrapper view view {
+    border-bottom: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.wrapper view view image {
+    width: 50rpx;
+    height: 50rpx;
+}
+.user-image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.btn {
+    border-bottom: none !important;
+    margin-top: 25rpx;
+}
+.first {
+    align-items: flex-end !important;
+}

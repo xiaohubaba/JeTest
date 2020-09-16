@@ -1,0 +1,45 @@
+<!--logs.wxml-->
+<view class="container log-list">
+<view class="header">
+<view class="left">
+<image  wx:if="{{!hasUserInfo}}" class="user-image" src="../../images/user.png" />
+<image  wx:else class="user-image" src="{{userInfo.avatarUrl}}"  />
+<text class="username">{{userInfo.nickName}}</text>
+</view>
+<view class="right" bind:tap="toDetailInfo">
+<image src="../../images/right.png" />
+</view>
+</view>
+</view>
+<view class="my-project">
+  <view class="header1">
+    <view>
+      <text>我的项目</text>
+    </view>
+     <view bind:tap="checkAllItem">
+       <text>查看全部项目</text>
+       <image src="../../images/right.png" class="img" />
+     </view>
+  </view>
+  <view class="three">
+    <view data-a="1" bind:tap="checkItem">
+      <image src="../../images/red.png" />
+      <text>阳性项目</text>
+    </view>
+     <view data-a="2" bind:tap="checkItem">
+        <image src="../../images/green.png" />
+        <text>阴性项目</text>
+     </view>
+      <view data-a="3" bind:tap="checkItem">
+         <image src="../../images/black.png" />
+         <text>异常项目</text>
+      </view>
+    </view>
+</view>
+<view class="help-center">
+<text class="title">帮助中心</text>
+<view class="help-content">
+  <view class="detail-item" bind:tap="contactUs"><image src="../../images/headphones.png" /><text>联系我们</text></view>
+  <view class="detail-item" bind:tap="aboutUs"><image src="../../images/about.png" /><text>关于我们</text></view>
+</view>
+</view>

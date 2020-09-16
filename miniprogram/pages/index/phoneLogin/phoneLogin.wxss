@@ -1,0 +1,60 @@
+.image {
+    display: flex;
+    justify-content: center;
+}
+.image image {
+    width: 140rpx;
+    height: 120rpx;
+    padding: 50rpx 0 50rpx 0;
+    display: flex;
+    justify-content: center;
+}
+.input view input {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 20rpx 0;
+}
+.first {
+    display: flex;
+    padding: 0 30rpx;
+    position: relative;
+}
+.first view {
+    width: 100%;
+}
+.first button {
+    position: absolute;
+    right: 30rpx;
+    bottom: 20rpx;
+    z-index: 99999;
+}
+.first .button {
+    background: gray;
+    color: #fff;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 40rpx 30rpx;
+}
+.btn button {
+    width: 100%;
+}
+.notice {
+    border: none;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0 30rpx;
+  }
+  .notice .special {
+    color: #4d9feb;
+  }
+  .use-other {
+      margin: 20rpx 30rpx 0 0;
+      float: right;
+      font-size: 12px;
+  }
+  .kong {
+      clear: both;
+      content: ''
+  }
